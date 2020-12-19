@@ -8,14 +8,24 @@ export default class extends React.Component {
     tvResults: null,
     searchTerm: "",
     loading: false,
-    error: null
+    error: null,
   };
 
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault(); //submit 해도 입력값이 남는다.
     const { searchTerm } = this.state;
     if (searchTerm !== "") {
       this.searchByTerm();
     }
+  };
+
+  updateTerm = (event) => {
+    const {
+      target: { value },
+    } = event;
+    this.setState({
+      searchTerm: value,
+    });
   };
 
   searchByTerm = async () => {
@@ -23,14 +33,14 @@ export default class extends React.Component {
     this.setState({ loading: true });
     try {
       const {
-        data: { results: movieResults }
+        data: { results: movieResults },
       } = await moviesApi.search(searchTerm);
       const {
-        data: { results: tvResults }
+        data: { results: tvResults },
       } = await tvApi.search(searchTerm);
       this.setState({
         movieResults,
-        tvResults
+        tvResults,
       });
     } catch {
       this.setState({ error: "Can't find results." });
@@ -49,6 +59,7 @@ export default class extends React.Component {
         error={error}
         searchTerm={searchTerm}
         handleSubmit={this.handleSubmit}
+        updateTerm={this.updateTerm}
       />
     );
   }
