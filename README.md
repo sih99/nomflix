@@ -7,10 +7,10 @@ This is [Nomad Coders Lecture](https://nomadcoders.co/)
 
 ## Screens
 
-- [ ] Home
-- [ ] TV Shows
-- [ ] Search
-- [ ] Detail
+- [x] Home
+- [x] TV Shows
+- [x] Search
+- [x] Detail
 
 ## API Verbs
 
@@ -25,8 +25,12 @@ This is [Nomad Coders Lecture](https://nomadcoders.co/)
 
 ## Code Challenges
 
-- [ ] IMDB Link
-- [ ] Tabs inside of Movie / Show Details (YT Videos, Production Company & Countries)
+- [x] IMDB Link
+- [x] Tabs inside of Movie / Show Details (YT Videos, Production Company & Countries)
 - [ ] Collections Link
 - [ ] /collections Route
 - [ ] On TV Show, show seasons and creators
+
+## Preview
+
+Try it on [Netlify](https://hopeful-joliot-05e3ab.netlify.app/#/)
